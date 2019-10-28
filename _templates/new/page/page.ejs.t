@@ -4,6 +4,7 @@ to: "src/pages/<%= h.inflection.dasherize(name) %>/<%= h.inflection.dasherize(na
 <template>
   <div class="<%= h.inflection.dasherize(name.replace('_', '')) %>">
     <%= h.inflection.dasherize(name.replace('_', '')) %>
+    <base-router-view @refresh="refresh"></base-router-view>
   </div>
 </template>
 
@@ -24,10 +25,13 @@ to: "src/pages/<%= h.inflection.dasherize(name) %>/<%= h.inflection.dasherize(na
       }
     },
     computed: {
-      // ...Helpers.computed,
+      // ...Helpers.<%= h.changeCase.camelCase(name.replace('_', ''))%>Computed,
     },
     methods: {
-      // ...Helpers.methods,
+      // ...Helpers.<%= h.changeCase.camelCase(name.replace('_', ''))%>Methods,
+      refresh() {
+        console.log('<%=name%>, refresh')
+      }
     }
   }
 </script>
@@ -36,5 +40,7 @@ to: "src/pages/<%= h.inflection.dasherize(name) %>/<%= h.inflection.dasherize(na
   @import "~@design"
 
   .<%= h.inflection.dasherize(name.replace('_', '')) %>
-    width: 100%
+    fill-box(fixed)
+    z-index: 50
+    background: #fff
 </style>

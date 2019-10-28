@@ -13,7 +13,7 @@ Vue.use(VueMeta, {
 
 const router = new VueRouter({
   routes,
-  mode: process.env.NODE_ENV === 'production' ? 'history' : '',
+  mode: process.env.VUE_APP_ENV === 'production' ? '' : '',
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition

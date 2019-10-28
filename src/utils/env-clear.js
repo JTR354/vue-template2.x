@@ -7,7 +7,7 @@ export function envClear() {
     storage.clear()
     storage.set('env', env)
   }
-  console.warn('环境：' + env)
+  console.warn('环境：' + JSON.stringify(process.env))
 }
 
 envClear()

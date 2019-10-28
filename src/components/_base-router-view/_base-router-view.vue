@@ -8,15 +8,19 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import {globalComputed} from '@state/helpers'
+
   const COMPONENT_NAME = 'BASE_ROUTER_VIEW'
 
   export default {
     name: COMPONENT_NAME,
     data() {
       return {
-        keepAlive: false,
-        transitionType: ''
+        keepAlive: false
       }
+    },
+    computed: {
+      ...globalComputed,
     },
     watch: {
       $route(to, from) {

@@ -137,6 +137,11 @@ bg-image($url)
   @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
     background-image: url($url + "@3x.png")
 
+icon-image1x($name)
+  display: inline-block
+  background-size: 100% 100%
+  background-image: url("./" + $name + ".png")
+
 icon-image($name)
   display: inline-block
   background-size: 100% 100%
@@ -253,3 +258,9 @@ clear-float()
     height: 0
     clear: both
     visibility: hidden
+
+//字体加粗
+font-bold()
+  /*font-family: $font-family-medium*/
+  font-weight: bold
+  font-family: normal

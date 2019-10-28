@@ -7,6 +7,7 @@ const COMMON_HEADER = {}
 HTTP.init(http => {
   http.config.timeout = TIME_OUT
   http.config.headers = COMMON_HEADER
+  // http.config.baseURL = process.env.VUE_APP_API
 })
 
 HTTP.setCallback({

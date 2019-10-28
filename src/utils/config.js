@@ -1,4 +1,4 @@
-const env = process.env
+const env = process.env.VUE_APP_ENV
 const version = ``
 
 const LOCAL_URL = {
@@ -18,11 +18,11 @@ const PROD_URL = {
 }
 
 export const BASE_URL =
-  env.NODE_ENV === 'production'
+  env === 'production'
     ? PROD_URL
-    : env.NODE_ENV === 'test'
+    : env === 'release'
       ? TEST_URL
-      : env.NODE_ENV === 'development'
+      : env === 'development'
         ? DEV_URL
         : LOCAL_URL
 

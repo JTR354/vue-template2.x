@@ -2,7 +2,7 @@
   "name": "{{ project }}",
   "version": "1.0.0",
   "description": "{{ description }}",
-  "author": "Ben <xuedengheng@outlook.com>",
+  "author": "jtr <jtr354@foxmail.com>",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve --mode development",
@@ -25,6 +25,7 @@
     "new": "hygen new"
   },
   "dependencies": {
+    "better-scroll": "^1.15.2",
     "browserslist": "^4.6.0",
     "caniuse-lite": "^1.0.30000969",
     "flyio": "^0.6.14",
