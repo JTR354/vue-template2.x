@@ -1,0 +1,26 @@
+//滑动转场动画-进入
+.slide-enter-active, .slide-leave-active
+  transition: all 0.3s
+
+.slide-enter
+  transform: translate3d(100%, 0, 0)
+
+.slide-leave-active
+  transform: translate3d(100%, 0, 0)
+
+//滑动转场动画-离开
+.out-enter-active, .out-leave-active
+  transition: all 0.3s
+
+.out-enter
+  transform: translate3d(200%, 0, 0)
+
+.out-leave-active
+  transform: translate3d(100%, 0, 0)
+
+//渐隐渐显动画
+.fade-enter-active, .fade-leave-active
+  transition: all 0.5s
+
+.fade-enter, .fade-leave-to
+  opacity: 0

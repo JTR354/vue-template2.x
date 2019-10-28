@@ -1,0 +1,188 @@
+@import "variable.styl"
+
+body, html
+  line-height: 1
+  font-family: 'PingFangSC-Regular', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback'
+  -webkit-tap-highlight-color: transparent
+  background: $color-background
+  color: $color-text-main
+
+.border-top-1px, .border-right-1px, .border-bottom-1px, .border-left-1px
+  position: relative
+  &:before, &:after
+    content: ""
+    display: block
+    position: absolute
+    transform-origin: 0 0
+
+.border-top-1px
+  &:before
+    border-top: 1px solid $color-line
+    left: 0
+    top: 0
+    width: 100%
+    transform-origin: 0 top
+
+.border-right-1px
+  &:after
+    border-right: 1px solid $color-line
+    top: 0
+    right: 0
+    height: 100%
+    transform-origin: right 0
+
+.border-bottom-1px
+  &:after
+    border-bottom: 1px solid $color-line
+    left: 0
+    bottom: 0
+    width: 100%
+    transform-origin: 0 bottom
+
+.border-left-1px
+  &:before
+    border-left: 1px solid $color-line
+    top: 0
+    left: 0
+    height: 100%
+    transform-origin: left 0
+
+//  鼠标移入时变手
+.hand
+  cursor: pointer
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2)
+  .border-top-1px
+    &:before
+      width: 200%
+      transform: scale(.5) translateZ(0)
+  
+  .border-right-1px
+    &:after
+      height: 200%
+      transform: scale(.5) translateZ(0)
+  
+  .border-bottom-1px
+    &:after
+      width: 200%
+      transform: scale(.5) translateZ(0)
+  
+  .border-left-1px
+    &:before
+      height: 200%
+      transform: scale(.5) translateZ(0)
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3)
+  .border-top-1px
+    &:before
+      width: 300%
+      transform: scale(1 / 3) translateZ(0)
+  
+  .border-right-1px
+    &:after
+      height: 300%
+      transform: scale(1 / 3) translateZ(0)
+  
+  .border-bottom-1px
+    &:after
+      width: 300%
+      transform: scale(1 / 3) translateZ(0)
+  
+  .border-left-1px
+    &:before
+      height: 300%
+      transform: scale(1 / 3) translateZ(0)
+
+//  鼠标移入时变手
+.hand
+  cursor: pointer
+
+// 背景色内容盒子样式
+.normal-box
+  background: $color-background
+  flex: 1
+
+// 主颜色功能按钮
+.btn-main
+  position: relative
+  color: $color-main
+  font-family: $font-family-regular
+  padding: 9px 12px
+  min-width: 92px
+  box-sizing: border-box
+  justify-content: center
+  display: flex
+  align-items: center
+  border: 1px solid $color-main
+  transition: all 0.3s
+  font-size: $font-size-12
+  border-radius: 4px
+  line-height: 1
+  cursor: pointer
+  user-select: none
+  &:hover
+    background: $color-main
+    color: $color-white
+    .add-icon
+      &:before, &:after
+        background: $color-white
+  &:active
+    opacity: 0.8
+
+.btn-disable
+  cursor: not-allowed
+  color: #ACACAC
+  background: #E1E1E1
+  border: 1px solid #ACACAC
+  .add-icon
+    &:before, &:after
+      background: #ACACAC
+  &:hover
+    background: #E1E1E1
+    color: #ACACAC
+    .add-icon
+      &:before, &:after
+        background: #ACACAC
+
+.btn-disable-store
+  cursor: not-allowed
+  color: #D2D2D2
+  background: #FBFBFB
+  border: 1px solid #E9ECEE
+  &:hover
+    background: #FBFBFB
+    color: #D2D2D2
+    .add-icon
+      &:before, &:after
+        background: #D2D2D2
+  &:active
+    opacity: 1
+
+.add-icon
+  margin-left: 4px
+  position: relative
+  width: 8px
+  height: 8px
+  transition: all 0.3s
+  &:after
+    content: ''
+    position: absolute
+    right: 3px
+    top: 0
+    width: 2px
+    height: 8px
+    background: $color-main
+    transition: all 0.3s
+  &:before
+    content: ''
+    position: absolute
+    right: 0px
+    top: 3px
+    width: 8px
+    height: 2px
+    background: $color-main
+    transition: all 0.3s
+
+.add-icon-disable
+  &:before, &:after
+    background: #D2D2D2
