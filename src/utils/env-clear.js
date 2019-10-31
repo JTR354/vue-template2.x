@@ -8,6 +8,7 @@ export function envClear() {
     storage.set('env', env)
   }
   console.warn('环境：' + JSON.stringify(process.env))
+  console.warn('版本：' + process.versions)
 }
 
 envClear()

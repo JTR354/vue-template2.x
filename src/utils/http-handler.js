@@ -1,7 +1,6 @@
 import HTTP from '@utils/http'
 import {app as APP} from '../main'
 import { ERR_OK, TIME_OUT } from '@utils/config'
-
 const COMMON_HEADER = {}
 
 HTTP.init(http => {

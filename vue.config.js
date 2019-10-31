@@ -1,9 +1,12 @@
+const webpack = require('webpack')
 const appConfig = require('./src/app.config')
 const TerserPlugin = require('terser-webpack-plugin')
-
+const params = require('./vue.build')
+console.log(params)
+const splitChunks = {}
 let builded = process.argv.some(val => val === 'build')
 let optimization = {}
-const splitChunks = {}
+
 if (builded){
   splitChunks.cacheGroups = {
     vendors: {
@@ -49,7 +52,13 @@ module.exports = {
     resolve: {
       alias: require('./aliases.config').webpack
     },
-    optimization
+    optimization,
+    plugins : [
+      new webpack.DefinePlugin({
+        'process.applications': JSON.stringify(params.applications),
+        'process.versions': JSON.stringify(params.versions)
+      })
+    ]
   },
   chainWebpack(config) {
     config.plugins.delete('prefetch')

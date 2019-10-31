@@ -14,6 +14,19 @@ npm install
 npm run dev
 ```
 
+## 参数说明：
+
+```bash
+npm run release -- --@ver=xxx --@app=xxx 以此类推
+
+- tips:
+   versions     => ver（版本）    默认值：''           其他值：任意
+   applications => app（应用）    默认值：'platform'   其他值：任意 
+   environments => env（环境）    默认值：'production' 其他值：test测试 dev研发
+   platforms    => pla（平台）    默认值：'wx'         其他值：swan百度 tt字节
+   id           => id （小程序id）默认值：''           其他值：任意 
+```
+
 ### Compiles and hot-reloads for release
 
 ```
